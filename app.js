@@ -16,7 +16,7 @@ mongoose.set("strictQuery", true);
 app.use("/api", main);
 
 // SERVER & MONGOOSE SETUP
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

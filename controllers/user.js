@@ -1,19 +1,5 @@
 import User from "../models/User.js";
 
-// export const addUser = async (req, res) => {
-//   const user = new User({
-//     userName: req.body.userName,
-//     email: req.body.email,
-//     password: req.body.password,
-//   });
-//   try {
-//     const newUser = await user.save();
-//     res.status(200).json(newUser);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-
 export const getUserDetail = async (req, res) => {
   const currentUserId = req.user.id;
   try {

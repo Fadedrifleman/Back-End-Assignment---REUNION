@@ -18,7 +18,7 @@ app.use("/api", main);
 // SERVER & MONGOOSE SETUP
 const PORT = process.env.PORT;
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect("mongodb+srv://admin-shivam:Test123@cluster1.xfhk5ye.mongodb.net/?retryWrites=true&w=majority/socailMediaApp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     writeConcern: {

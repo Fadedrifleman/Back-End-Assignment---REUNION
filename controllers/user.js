@@ -28,7 +28,7 @@ export const followUser = async (req, res) => {
 
       await Promise.all([currentUser.save(), userToFollow.save()]);
     }
-    res.status(204).json({ message: "follow sucessfull" });
+    res.status(200).json({ message: "follow sucessfull" });
   } catch (err) {
     res.status(500).json({ error: error.message });
   }
@@ -47,7 +47,7 @@ export const unfollowUser = async (req, res) => {
 
       await Promise.all([currentUser.save(), userToUnfollow.save()]);
     }
-    res.status(204).json({ message: "unfollow sucessfull" });
+    res.status(200).json({ message: "unfollow sucessfull" });
   } catch (err) {
     res.status(500).json({ error: error.message });
   }

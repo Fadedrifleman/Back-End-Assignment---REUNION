@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "build": "npm install"
+    "build": "npm install",
+    "test": "mocha --require @babel/register --timeout 10000 --exit './test/**/*.test.js'"
   },
   "author": "Shivam Uttam",
   "license": "ISC",
@@ -19,6 +20,10 @@
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
+    "@babel/register": "^7.21.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.21"
   }
 }

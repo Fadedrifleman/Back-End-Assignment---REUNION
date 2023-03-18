@@ -86,7 +86,7 @@ export const addComment = async (req, res) => {
 export const getPost = async (req, res) => {
   const postId = req.params.id;
   try {
-    const post = await Post.findById(postId).populate("comments");
+    const post = await Post.findById(postId).populate("comment");
     const likeCount = post.likes.length;
     res.status(200).json({
       _id: post._id,
@@ -103,15 +103,10 @@ export const getPost = async (req, res) => {
 export const getAllPost = async (req, res) => {
   const currentUserId = req.user.id;
   try {
-    const user = await User.findById(currentUserId)
-      .populate({
-        path: "post",
-        populate: {
-          path: "comment",
-        },
-      })
-      .exec();
-    const posts = user.post.forEach((post) => {
+    const posts = await Post.find({ ownerId: currentUserId })
+      .sort({ createdAt: -1 })
+      .populate("comment");
+    const final = posts.map((post) => {
       return {
         _id: post._id,
         title: post.title,
@@ -121,7 +116,7 @@ export const getAllPost = async (req, res) => {
         likes: post.likes.length,
       };
     });
-    res.status(200).json(posts);
+    res.status(200).json({post: final});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

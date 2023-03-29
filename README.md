@@ -1,4 +1,3 @@
-```markdown
 # back-end-assignment---reunion
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
@@ -39,7 +38,7 @@ Shivam Uttam
 - chai-http: ^4.3.0
 - mocha: ^10.2.0
 - nodemon: ^2.0.21
-```
+
 
 # Test email and password:
 - email: test@gmail.com, 

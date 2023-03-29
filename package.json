@@ -8,7 +8,7 @@
     "start": "node app.js",
     "build": "npm install",
     "test": "mocha --require @babel/register --timeout 10000 --exit './test/**/*.test.js'",
-    "build-docker-img': "docker build --build-arg NODE_VERSION=18.15.0 -t myapp .",
+    "build-docker-img": "docker build --build-arg NODE_VERSION=18.15.0 -t myapp .",
     "run-docker": "docker run -p 3000:3000 myapp"
   },
   "author": "Shivam Uttam",
